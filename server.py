@@ -4,12 +4,3 @@ Author: Aleksa Zatezalo
 Date: September 2022
 """
 
-# Imports
-
-
-# Setting Up IP/Sockets
-
-
-# Initializing Connection
-
-# Runtime Loop
