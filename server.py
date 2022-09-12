@@ -10,6 +10,16 @@ import socket
 # Creating Listening Port
 HOST = '127.0.0.1' # '192.168.43.82'
 PORT = 8081 # 2222
+
+# Ask for and set new IP & Port
+new_host = input('Input Host IP (Blank if default).')
+new_port = input('Input Host Port (Blank if default).')
+
+if (new_host != "\n"):
+    REMOTE_HOST = new_host
+if (new_port != "\n"):
+    REMOTE_PORT = new_port
+
 server = socket.socket()
 server.bind((HOST, PORT))
 

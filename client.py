@@ -5,6 +5,7 @@ Date: September 2022
 """
 
 # Imports
+from ctypes.wintypes import INT
 import socket
 import subprocess
 
@@ -13,14 +14,7 @@ REMOTE_HOST = '127.0.0.1'
 REMOTE_PORT = 8081 # 2222
 client = socket.socket()
 
-# Ask for and set new IP & Port
-new_host = input('Input Host IP (Blank if default).')
-new_port = input('Input Host Port (Blank if default).')
 
-if (new_host != "\n"):
-    REMOTE_HOST = new_host
-if (new_port != "\n"):
-    REMOTE_PORT = new_port
 
 # Initializing Connection
 print("[-] Connection Initiating...")
